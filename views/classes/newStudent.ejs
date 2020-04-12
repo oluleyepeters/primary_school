@@ -1,0 +1,23 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/login.css">
+<% include ../partials/headers2 %>
+<body>
+    <section id="container">
+        <section class="inner-contain">
+            <form style="margin-top:0px;" action="/class/<%=foundClass._id%>/" method="POST">
+                <input class="input2" type="text" name="firstname" id="firstname" placeholder="firstname">
+                <input class="input2" type="text" name="othername" id="othername" placeholder="othername">
+                <input class="input2" type="text" value="123456" readonly name="password" id="password">
+                <input class="input2" type="text" name="surname" id="surname"  placeholder="surname">
+                <input class="input2" type="text" name="username" id="username" placeholder="username">
+				<input class="input2" type="number" name="class_" id="Class" value="<%=foundClass.Class%>" readonly>
+                <input class="input2" type="text" value="<%=foundClass.className%>" name="className_" readonly id="classNames" placeholder="ClassName">                
+                <input id="submit" class="button" type="submit" value="Submit">
+
+            </form>
+        </section> 
+    </section>
+<% include ../partials/footer %>

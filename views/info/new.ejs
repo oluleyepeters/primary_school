@@ -1,0 +1,20 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/info-new.css"> 
+<% include ../partials/headers2 %>
+    <div id="container"> 
+        <div class="inner-container">
+        <form action="/info" method="POST" enctype="multipart/form-data">
+            <input class="input" type="text" name="title" id="title" placeholder="title">
+            <textarea name="content" id="content" rows="15" cols="">Enter Content</textarea>
+            <input class="input2" type="file" name="image" value="Choose Image">         
+            <section>
+                <button class="button" type="submit">submit</button>
+            </section>
+        </form>
+    </div>
+    </div>
+<% include ../partials/footer %>

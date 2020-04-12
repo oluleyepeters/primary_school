@@ -1,0 +1,35 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/allteachers.css">
+
+
+<% include ../partials/headers2 %>
+<section id="container">
+    <div class="inner-container">
+    <section class="teachers">
+        <% teachers.forEach(function(teacher){%>
+            <section class="teacher">
+                <div class="imgcontainer">
+                    <img src="<%=teacher.path%>" width="100%" height="100%"  alt="img">
+                </div>
+                <div class="details">
+                    <!-- <li><%=teacher.title%></li> -->
+                    <li><%=teacher.surname%> <%=teacher.firstname%></li>
+                    <li><%=teacher.email%></li>
+                    <li><%=teacher.phone_number%></li>
+                    <li style="margin-top:5px;"><a href="/teachers/<%=teacher._id%>/edit">Edit</a></li>
+                </div>
+            </section>
+            
+        <%})%>
+    </section>
+	<section>
+       <a href="/teachers/new" style="text-align:center" class="button1" type="submit">+ Teacher</a>
+    </section>
+
+</div>
+</section>
+<% include ../partials/footer %>

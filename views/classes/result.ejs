@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/result.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar-toggle" style="margin-right:15px;" id="js-navbar-toggle">
+            <div class="togglebox">
+                <div>
+                    <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
+                    <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
+                </div>    
+            </div>            
+        </div>
+            <div class="logo" style="margin-left:7px;">
+                <li>My Beulah</li>
+            </div>
+            <nav class="items" >
+				<li><a href="/">Home</a></li>
+				<li><a href="#">News</a></li>
+				<% if(currentUser && currentUser.role == "classTeacher"){ %>
+					<li><a href="/years">Years</a></li>
+				<%} else if(currentUser && currentUser.role == "head"){%>	
+					 <li><a href="/years">Years</a></li>
+					 <li><a href="/sections">Section</a></li>
+				<% } %>
+                <% if(currentUser){ %>
+                    <li><a href="#"><%=currentUser.username%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <%}else{%>
+                    <li><a href="/students/login">Login</a></li>
+                <%}%>
+            </nav>
+        </div>
+    </header>
+<div id="container">
+    <section class="editresult"> 
+        <div class="schDetails">
+            <p>My Rehoboth International Nursery/Primary School</p>
+            <p>No B3/21, Ire-Akari Estate 2, off Akure-Ijare Way, Akure Ondo State</p>
+            <p>Motto: God Our Strength </p>
+        </div>
+        <div class="rptDetails">
+            <p>Continuous Assessment Sheet for Senior Secondary School</p>
+            <div><p>Session : </p> <p>Term: </p> <p>Total Number in Class: </p></div>
+            <div><p>Admission Number: </p> <p>Name: <%=student.firstname%><%=student.othername%><%=student.surname%></p> </div>
+        </div>
+        <table class="sujects">
+            <thead>
+                <tr class="head"> 
+                    <th>Subject</th>
+                    <th>Exam</th>
+                    <th>1st Test</th>
+                    <th>2nd Test</th>
+                    <th>Assg</th>
+                    <th>Total</th>
+                    <th>Position</th>
+                    <th>Grade</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%result.subjects.forEach(function(subject){%>
+                <tr>
+                    <td class="sub"><%=subject.subject%></td>
+                    <td class="sub"><%=subject.Examination%></td>
+                    <td class="sub"><%=subject.First_test%></td>
+                    <td class="sub"><%=subject.Second_test%></td>
+                    <td class="sub"><%=subject.assignment%></td>
+                    <td class="sub"></td>
+                    <td class="sub"></td>
+                    <td class="sub"></td>
+                    <td class="sub"></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <tr class="head"> 
+                    <th>Character/Conduct</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sub">Attendance</td>
+                    <td class="sub"></td>                                        
+                </tr>
+                <tr>
+                    <td class="sub">Punctuality</td>
+                    <td class="sub"></td>                                        
+                </tr>
+                <tr>
+                    <td class="sub">Neatness</td>
+                    <td class="sub"></td>                                        
+                </tr>
+                <tr>
+                    <td class="sub">Relationship With Others</td>
+                    <td class="sub"></td>                                        
+                </tr>
+            </tbody>
+        </table>   
+        <div>
+            <div cltDetails>
+                <p>General Remarks</p>
+                <p>_______________________________________________________________________________________________</p>                
+                <p>Next Terms Begins : </p>
+            </div>    
+            <div class="sgn">
+                <div>
+                    <p>___________________________</p>                
+                    <p>ClassTeachers Signature</p>                
+                </div>
+                <div>
+                    <p>___________________________</p>                
+                    <p>Principals Signature</p>                
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="subjects">
+        <a class="link" href="/class/<%=student.id%>/<%=student._id%>/result/<%=result._id%>/<%=result.termName%>/edit">Edit Result</a>
+    </section>
+</div>
+
+<% include ../partials/footer %>

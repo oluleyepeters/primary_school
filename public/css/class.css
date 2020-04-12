@@ -1,0 +1,288 @@
+html,body{
+    background-color: gray;
+    margin: 0%;
+    padding: 0%;
+}
+
+div > li >a{
+    color: white;
+    font-style: bold;
+    font-family: serif;
+}
+
+#container{
+    /*max-height: 85%;*/
+    padding-bottom: 100px;
+    /*overflow: auto;*/
+}
+
+.classTeacher{
+    display:flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+    text-transform: capitalize;
+}
+
+.name{
+    text-transform: capitalize;
+}
+
+section{
+    display: flex;
+} 
+
+.linked{
+    text-decoration:none;
+    color:white;
+    width: 100px; 
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    background-color: darkred ;
+    border-radius: 4px;
+}
+
+.link-1{
+    text-decoration:none;
+    color:white;
+    border-width: thin;
+/*    text-decoration: none;*/
+    width: 90px;
+    padding: 5px;
+    margin: 5px; 
+    background-color: darkred;
+    border-radius: 4px;
+}
+
+.but{
+    background-color: darkred;
+    text-decoration: none;
+    word-wrap: break-word;
+    width: 120px;
+    margin: 5px;
+}
+
+
+.but a{
+    color: white;
+    text-decoration: none;
+}
+
+
+hr{
+    width:100%; 
+    height:2px; 
+    margin-bottom: 10px; 
+    background-color:darkred;
+}
+
+.students{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    /* padding: 5px; */
+}
+
+.students-1{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;    
+}
+
+@media(max-width:500px){
+    .students-1{
+        display:flex;
+/*        flex-wrap: wrap;*/
+        flex-direction: column;
+    }
+    .but{
+    background-color: darkred;
+    text-decoration: none;
+    width: 30%;
+    
+    margin: 5px;
+    }
+}
+
+.margin{
+    margin-top: 25px;
+}
+
+footer{
+    position: relative;
+    bottom: 0px;
+    height: 100px;
+    padding: 0%;
+    margin-bottom: -100px;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */ 
+    /* margin-top:30px; */
+    justify-content: center;
+    align-content: center;
+    background-color: darkred;
+}
+
+
+
+.footer-1{
+    /* height: 100px; */
+    display: flex;
+    align-self: center;
+}
+
+/*  New Style */
+#dlt {
+    display: flex;
+    width: 100%;
+    /*background: indigo;*/
+    /*flex-direction: row;*/
+    /*flex-basis: */
+}
+
+#names{
+    width: 15%;
+    background: red;
+}
+
+#result{
+    width: 85%;
+    background: blue;
+}
+
+.subjects{
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.editresult{
+    width: 1200px;
+    overflow-x: scroll;
+}
+
+.schDetails{
+    width: 90%;
+    background-color: crimson;
+    margin: 0 auto;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schDetails p{
+    margin-top: 1px
+    margin-bottom:0px;
+    height: 25px
+}
+
+.schDetails p:first-child{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.schDetails p:last-child{
+    margin-bottom: 5px;
+}
+
+/*.schDetails p:last-child{*/
+    /*margin-bottom:1px;*/
+/*}*/
+
+.rptDetails{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rptDetails > p {
+    height: 25px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.rptDetails > div{
+    margin-top: 0.2px;
+    margin-bottom: 0.2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.sgn{
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+table{
+    margin: 0 auto;
+/*    margin-left:10px;*/
+    /* flex-basis: 70%; */
+    width: 90%;
+}
+
+.table{
+    margin: 0 auto;
+/*    margin-left:10px;*/
+    /* flex-basis: 70%; */
+    width: 400px;
+}
+
+table{
+    /* background-color: gray; */
+    margin-bottom: 80px;
+    border-collapse: collapse;
+    overflow: auto;
+}
+
+
+tr{
+    height: 30px;
+}
+
+table, tr, td{
+    margin-bottom:50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    /* border-collapse: collapse; */
+}
+
+
+table tbody tr:nth-child(odd){
+    /*background-color: crimson;*/
+    /*color: #ffffff*/
+}
+
+
+table tbody tr:nth-child(even){
+    /*background-color: rgb(197, 188, 188)*/
+}
+
+
+th, td{
+    padding: 5px;
+}
+
+
+td{
+    text-align: center;
+}
+
+
+thead{
+    background-color:rgb(197, 188, 188)
+}

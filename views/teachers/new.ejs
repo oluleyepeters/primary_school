@@ -1,0 +1,23 @@
+<% include ../partials/headers %>
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/login.css">
+    <% include ../partials/headers2 %>
+    <div id="container">
+        <div class="inner-contain">
+            <form action="/teachers" style="margin-top:0px;" method="POST" enctype="multipart/form-data">
+                <input class="input2" type="text" name="firstname" id="firstname" placeholder="firstname">
+                <input class="input2" type="text" name="othername" id="othername" placeholder="othername">
+                <input class="input2" type="text" name="surname" id="surname" placeholder="surname">
+                <input class="input2" type="text" name="phone_number" id="phone_number" placeholder="telephone">
+                <input class="input2" type="text" name="email" id="email" placeholder="email">
+                <input class="input2" type="file" name="image" id="othername" value="Choose Image">         
+                <section>
+                    <button id="submit" class="button"  type="submit">submit</button>
+                </section>
+            </form>
+        </div>
+    </div>
+<% include ../partials/footer %>
+

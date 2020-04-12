@@ -1,0 +1,19 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/info-new.css"> 
+<% include ../partials/headers2 %>
+    <div id="container"> 
+        <div class="inner-container">
+        <form action="/info/<%=information._id%>?_method=PUT" method="POST">
+             <input class="input" type="text" name="title" value="<%=information.title%>" id="title" placeholder="title">
+            <textarea name="content" content="" id="content"  rows="15"><%=information.content%></textarea>
+            <section>
+                <button class="button" type="submit">Submit</button>
+            </section>
+        </form>
+    </div>
+    </div>
+<% include ../partials/footer %>

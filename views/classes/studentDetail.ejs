@@ -1,0 +1,34 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/login.css">
+<% include ../partials/headers2 %>
+<body>
+
+<link rel="stylesheet" href="/css/studentDetail.css">
+
+<div id="container">
+    <section class="section">
+        <p>Name: <%= student.surname%> <%=student.firstname%><%= student.othername %></p>
+        
+        <p>Class: <%= student.Class %></p>
+        <p>Username: <%= student.username %></p>
+    </section>    
+    <% student.guardians.forEach(function(guardians){ %>
+        <section class="set">
+        <p><%= guardians.fathers_guardians_name %></p>
+        <p><%= guardians.fathers_guardians_phone_no %></p>
+        <p><%= guardians.fathers_guardians_address %></p>
+        <p><%= guardians.fathers_guardians_email %></p>
+        <p><%= guardians.mothers_guardians_name %></p>
+        <p><%= guardians.mothers_guardians_phone_no %></p>
+        <p><%= guardians.mothers_guardians_address %></p>
+        <p><%= guardians.mothers_guardians_email %></p>
+        <a href="/years/<%=year_id%>/<%=student.className%>/<%=classid%>/students/<%=student._id%>/guardians/<%=guardians._id%>/edit">Edit Guardian</a>
+        </section>
+    <% }) %> 
+    <a class="link" href="/years/year_id/<%=student.className%>/pry_id/students/<%=student._id%>/guardians/new">Add Guardian</a>
+</div>
+
+<% include ../partials/footer%>

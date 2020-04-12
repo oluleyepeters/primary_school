@@ -1,0 +1,177 @@
+html,body{
+    margin: 0;
+    padding: 0%;
+    height:100%;
+    background-color: gray;
+}
+
+div > li >a{
+    color: white;
+    font-style: bold;
+    font-family: serif;
+}
+.navbar-toggle{
+    padding-left: 10px;
+    display: none;
+    /* justify-self: flex-end; */
+}
+
+
+body{
+    padding: 0%;
+    margin: 0%
+}
+
+.button{
+    text-decoration: none;
+    background-color:darkred;
+    padding-left:8px;
+    padding-right: 8px;
+    padding-top:2px;
+    padding-bottom:2px;
+    border-radius:2px;
+    color:white;
+    margin-left:10px;
+    margin-bottom: 30px;
+}
+
+#container{
+    min-height: 85%;
+    padding-bottom: 100px;
+    overflow: auto;
+}
+
+.lnk{
+    text-decoration: none;
+    background-color: none;
+}
+
+ol{
+    margin: 10px;
+/*    list-style: georgian;*/
+}
+
+.title{
+    color: black;
+    margin: 10px;
+    list-style: inherit;
+    word-wrap: break-word;
+/*    text-decoration: none;*/
+}
+
+
+@media(max-width:400px){
+    textarea{
+        width: 70%;
+        margin: 10px;
+        align-self: center;
+    }
+
+    input{
+        width: 70%;
+        margin: 10px;
+        align-self: center
+    }
+
+    button{
+        /* width: 70%; */
+        margin: 10px;
+        align-self: center
+    }      
+}
+
+@media(max-width:700px){
+    textarea{
+        width: 50%;
+        margin: 10px;
+        align-self: center;
+    }
+
+    input{
+        width: 50%;
+        margin: 10px;
+        align-self: center
+    }
+
+    button{
+        /* width: 50%; */
+        margin: 10px;
+        align-self: center
+    }      
+}
+
+.inner-container{
+    width:35%;
+    /* padding-bottom: 230px; */
+    background-color: white;
+    /* min-height: 100%; */
+    margin:0px auto;
+    /* overflow-x: scroll; */
+    overflow-y: hidden;
+
+}
+
+
+@media (max-width:760px){
+    button, input{
+        width:50%;
+    }
+}
+
+
+@media (max-width:960px){
+    .button, .input,.input2{
+        width:40%;
+    }
+.inner-container{
+        width:55%;
+    }
+}
+    
+@media (max-width:1600px){
+    .button, .input,.input2{
+        width:35%;
+    }
+    .inner-container{
+        width:40%;
+    }
+}
+
+
+@media (max-width:650px){
+    .button,.input,.input2{
+        width:45%;
+    }
+    .inner-container{
+        width:65%;
+    }
+}
+
+@media (max-width:400px){
+    .button,.input,.input2{
+        width:50%;
+    }
+    .inner-container{
+        width:80%;
+    }
+}
+
+footer{
+    position: relative;
+    /* bottom: 0px; */
+    height: 100px;
+    margin-top:-100px;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    /* margin-top:30px; */
+    justify-content: center;
+    align-content: center;
+    background-color: darkred;
+}
+
+.footer-1{
+    /* height: 100px; */
+    display: flex;
+    align-self: center;
+}

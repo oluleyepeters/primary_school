@@ -1,0 +1,24 @@
+<% include ../partials/headers %>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<!-- <link rel="stylesheet" href="/css/headers2.css"> -->
+<link rel="stylesheet" href="/css/login.css">
+<% include ../partials/headers2 %>
+    <div id="container">
+        <div class="inner-container"> 
+            <form action="/head" style="" method="POST">
+                <input class="input" type="text" name="username" id="username" placeholder="username">
+                <input class="input2" type="text" name="email" id="username" placeholder="email">
+                <input class="input2" type="password" name="password" id="password" placeholder="password">
+                <select class="input2" name="role">
+                    <option class="input2" value="admin" id="password">Admin
+                    </option>
+                </select>
+                <section>
+                    <button class="button" type="submit">submit</button>
+                </section>
+            </form>
+        </div>
+    </div>
+<% include ../partials/footer %>
+

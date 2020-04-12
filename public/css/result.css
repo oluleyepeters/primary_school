@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    margin: 0;
+    padding: 0%;
+    height:100%;
+}
+
+div > li >a{
+    color: white;
+    font-style: bold;
+    font-family: serif;
+}
+
+header{
+    /* position: absolute; */
+    width: 100%;
+    display: flex;
+    list-style: none;
+    /* height: 50px; */
+    /* justify-content: space-between; */
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* padding-top: 5px; */
+    padding-right: 0px;
+    padding-left: 0px;
+    /* padding-bottom: 5px; */
+    background-color: darkred;
+    color:whitesmoke;
+}
+ 
+
+header nav{
+    /* flex-wrap: wrap; */
+    display:flex;
+    margin-left: auto;
+    /* justify-self: flex-end; */
+    /* margin: 0px; */
+    padding: 2px;
+}
+
+.navbar-toggle{
+    padding-left: 10px;
+    display: none;
+    /* justify-self: flex-end; */
+}
+
+/*@media only screen and (max-width: 768px) {
+    .items,
+    header{
+        flex-direction: column;
+    }*/
+
+/*    header{
+        align-items: start;
+    }*/
+
+/*    .items{
+        margin-left: 0;
+        display: none;
+    }*/
+
+    /*.views{*/
+        /*display: flex;*/
+    /*}*/
+
+    /*.navbar-toggle{*/
+        /*position:absolute;*/
+        /*right: 1px;*/
+        /*align-self: flex-end;*/
+        /*margin-left:auto;*/
+        /*display: inline;*/
+        /*cursor: pointer;*/
+    /*}*/
+  /*}*/
+
+header nav li{
+    margin: 5px;
+}
+
+header nav li a{
+    color: white;
+    text-decoration: none;
+}
+
+
+body{
+    padding: 0%;
+    margin: 0%
+}
+
+
+.btn-4{
+    background-color: cornflowerblue;
+    color:white;
+    margin: 10px auto;
+    box-shadow: 0px;
+    outline: none;
+    border:none;
+    border-radius: 7px;
+    height: 50px;
+    width: 50%;
+    flex-basis: 12%;
+}
+
+
+#container{
+    min-height: 85%;
+    padding-bottom: 100px;
+    /*overflow: auto;*/
+    /*width: 1200px;*/
+}
+  
+.subjects{
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.editresult{
+    width: 1200px;
+    overflow-x: scroll;
+}
+
+.schDetails{
+    width: 90%;
+    background-color: crimson;
+    margin: 0 auto;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schDetails p{
+    margin-top: 1px
+    margin-bottom:0px;
+    height: 25px
+}
+
+.schDetails p:first-child{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.schDetails p:last-child{
+    margin-bottom: 5px;
+}
+
+/*.schDetails p:last-child{*/
+    /*margin-bottom:1px;*/
+/*}*/
+
+.rptDetails{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rptDetails > p {
+    height: 25px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.rptDetails > div{
+    margin-top: 0.2px;
+    margin-bottom: 0.2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.sgn{
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+table{
+    margin: 0 auto;
+/*    margin-left:10px;*/
+    /* flex-basis: 70%; */
+    width: 90%;
+}
+
+.table{
+    margin: 0 auto;
+/*    margin-left:10px;*/
+    /* flex-basis: 70%; */
+    width: 400px;
+}
+
+table{
+    /* background-color: gray; */
+    margin-bottom: 80px;
+    border-collapse: collapse;
+    overflow: auto;
+}
+
+
+tr{
+    height: 30px;
+}
+
+table, tr, td{
+    margin-bottom:50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    /* border-collapse: collapse; */
+}
+
+
+table tbody tr:nth-child(odd){
+    /*background-color: crimson;*/
+    /*color: #ffffff*/
+}
+
+
+table tbody tr:nth-child(even){
+    /*background-color: rgb(197, 188, 188)*/
+}
+
+
+th, td{
+    padding: 5px;
+}
+
+
+td{
+    text-align: center;
+}
+
+
+thead{
+    background-color:rgb(197, 188, 188)
+}
+
+
+.link{
+    text-decoration:none;
+    color:white;
+    /* width: 100px; */
+    padding: 5px;
+    margin-top:25px;
+    margin-left: 5%;
+    background-color: crimson;
+    border-radius: 4px;
+}
+
+footer{
+    position: relative;
+    /* bottom: 0px; */
+    height: 100px;
+    margin-top:-100px;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    /* margin-top:30px; */
+    justify-content: center;
+    align-content: center;
+    background-color: darkred;
+}
+
+.footer-1{
+    /* height: 100px; */
+    display: flex;
+    align-self: center;
+}

@@ -1,0 +1,19 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/students.css">
+<% include ../partials/headers2 %>
+<body>
+    <section id="container">
+        <div class="inner-container">
+            <div class="box-1">
+                <p>Username: <%=student.username%></p>
+                <p style="text-transform:capitalize">Name: <%=student.surname%> <%=student.firstname%>.<%=student.othername[0]%></p>
+            </div>
+            <div class="box">
+                <a  class="link" href="/student/<%=student.user_id%>/dashboard/result">First-Term Result</a>
+            </div>
+        </div>
+    </section>
+<% include ../partials/footer %>

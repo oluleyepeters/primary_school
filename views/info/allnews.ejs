@@ -1,0 +1,21 @@
+<% include ../partials/headers %>
+<title>News</title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/all-info.css"> 
+<% include ../partials/headers2 %>
+<section id="container">
+    <div class="inner-container">
+        <h3 style="margin:8px auto; text-align:center;" >Latest Information</h3>
+    <ol>
+        <% informations.forEach(function(information){%>
+            <a class="lnk" href="/info/<%=information._id%>"><li class="title"><%=information.title%></li></a>
+        <%})%>
+    </ol>
+    <section style="margin-top:100px; margin-left:10px; margin-bottom:20px;">
+        <a class="button" id="submit" href="/info/new">Add</a>
+    </section>
+    </div>
+</section>  
+<% include ../partials/footer %>

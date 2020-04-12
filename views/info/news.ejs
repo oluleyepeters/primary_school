@@ -1,0 +1,27 @@
+<% include ../partials/headers %>
+<title><%= info.title %></title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/info-news.css"> 
+<% include ../partials/headers2 %>
+    <div id="container">
+        <div class="inner-container">    
+        <section class="news-box">
+            <p class="news-title"><%=information.title%></p>
+                <img  class="info-image"
+                src="<%=information.path%>" alt="Image">
+            <div class="info-content">
+                <p ><%=information.content%></p>
+            </div>
+            <div style="margin-top:5px; margin-bottom:5px;">
+                 <button class="button"><a style="color:white; text-decoration:none;" href="/info/<%=information._id%>/edit" role="button">Edit</a></button>
+                <form class="d-inline" action="/info/<%=information._id%>?_method=DELETE" method='POST'>
+                   <button class="button" type="submit">Delete</button>
+                </form>
+            </div>
+        </section>
+    </div> 
+
+    </div>
+<% include ../partials/footer %>

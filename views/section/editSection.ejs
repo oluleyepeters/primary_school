@@ -1,0 +1,23 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/login.css"> 
+<% include ../partials/headers2 %>
+<body>
+    <div id="container">
+        <div class="inner-container">
+        <form action="/sections/<%=section._id%>?_method=PUT" method="post">
+            <input class="input" type="text" name="section" id="section"
+            value="<%=section.section%>">
+            <input class="input" type="date" name="startDate" id="startdate" value="<%=section.startDate%>">
+            <input class="input" type="date" name="endDate" id="endDate" value="<%=section.endDate%>">                                            
+            <section>
+                <button class="button" id="submit" type="submit">Submit</button>
+            </section>
+        </form>
+        </div>
+    </div>
+
+<% include ../partials/footer %>

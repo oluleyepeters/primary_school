@@ -1,0 +1,22 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/login.css">
+<% include ../partials/headers2 %>
+<body>
+    <section id="container">
+        <section class="inner-contain">
+            <form action="/years/<%=year_id%>/student.className/<%=classid%>/students/<%=student_id%>/guardians/<%=guardians._id%>?_method=PUT" method="POST">
+                <input type="text" class="input2" value="<%=guardians.fathers_guardians_name%>" name="fathers_guardians_name" id="fathers_name" placeholder="fathers_name">
+                <input type="text" class="input2" value="<%=guardians.fathers_guardians_phone_no%>" name="fathers_guardians_phone_no" id="fathers_phone_no" placeholder="fathers_phone">
+                <input type="text" class="input2" value="<%=guardians.fathers_guardians_address%>" name="fathers_guardians_address" id="fathers-address" placeholder="fathers_address">
+                <input type="text" class="input2" value="<%=guardians.fathers_guardians_email%>" name="fathers_guardians_email" id="surname" placeholder="fathers_email">
+                <input type="text" class="input2" value="<%=guardians.mothers_guardians_name%>" name="mothers_guardians_name" id="mothers_name" placeholder="mothers_name">
+                <input type="text" class="input2" value="<%=guardians.mothers_guardians_phone_no%>" name="mothers_guardians_phone_no" id="mothers_phone_no" placeholder="mothers_phone_no">
+                <input type="text" class="input2" value="<%=guardians.mothers_guardians_address%>" name="mothers_guardians_address" id="mothers_address" placeholder="mothers_address">
+                <input type="text" class="input2" value="<%=guardians.mothers_guardians_email%>" name="mothers_guardians_email" id="mothers_email" placeholder="mothers_email">
+            </form>
+        </section>
+    </section>
+<% include ../partials/footer %>

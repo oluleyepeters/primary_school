@@ -1,0 +1,24 @@
+<% include ../partials/headers %>
+<title></title>
+<meta name="" content="">
+<meta name="" content="">
+<link rel="stylesheet" href="/css/headers.css">
+<link rel="stylesheet" href="/css/login.css"> 
+<% include ../partials/headers2 %>
+<body>
+    <div id="container">
+        <div class="inner-container">
+            <form action="/sections" method="POST">
+                <input class="input" type="text" name="section" id="section">
+                <input class="input" type="date" name="startDate" id="startdate">
+                <input class="input" type="date" name="endDate" id="enddate">
+                <input class="input" type="date" name="firsttermstartDate" id="startdate">                                
+                <input class="input" type="date" name="firsttermendDate" id="enddate">                                
+                <input class="input" type="date" name="secondtermstartDate" id="enddate">                                
+                <input class="input" type="date" name="secondtermendDate" id="enddate">                                
+                <input class="input" type="date" name="thirdtermstartDate" id="enddate">     
+                <input class="input" type="date" name="thirdtermendDate" id="enddate">                                                                                       
+                <button class="button" id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
