@@ -125,13 +125,14 @@ router.get('/:username/',function(req,res){
 // });
 
 router.put('/:username/status',function(req,res){
-    db.Admin.findOneAndUpdate({username:req.params.username},req.body.status, function(err,admin){
-        if(err){
-            return next(err)    
-        }else{
-            console.log(admin)
-            res.json('Status Updated')
-        } 
+    db.Admin.findOne({username:req.params.username})
+    .then((user) => {
+        user.status = req.body.status
+        user.save()
+        return user
+    })
+    .then((user) => {
+        res.json(user)
     })
 })
 

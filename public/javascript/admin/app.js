@@ -1,4 +1,5 @@
-const state = {}
+const state = {};
+var body = {};
 
 document.addEventListener('DOMContentLoaded', e => {
     var allAdmin = new Admin()
@@ -19,7 +20,12 @@ document.querySelector('body').addEventListener('click', e => {
         .then((data) => {
             var index = findIndex(state.data, username);
             state.data.splice(index,1)
-            displayAdmins(state.data , state.goToPage)
+            document.querySelector('#contain').innerHTML = '';
+            if(state.data.length === 5){
+                state.goToPage = 1;
+                displayAdmins(state.data , state.goToPage)
+            }   
+            displayAdmins(state.data, state.goToPage)         
         })
     }
 })
@@ -27,34 +33,37 @@ document.querySelector('body').addEventListener('click', e => {
 document.querySelector('body').addEventListener('click', e => {
     if(e.target.classList.contains('status')){
         var currStatus = e.target.dataset.status;
-        console.log(currStatus)
         var username = e.target.dataset.username;
-        let body = {};
         if (currStatus === ''){
             body.status = 'active'
         }else if( currStatus === 'active'){
-            body.status === 'inactive';
-            console.log(body)
+            body.status = 'inactive'
         }else if( currStatus === 'inactive'){
             body.status = 'active'
-            console.log(body)
         }
         var currAdmin = new Admin();
-        // currAdmin.updateAdmin(username, datum)
-        // .then((data) => {
-            // console.log('Hello Awayu')
-            // state.data.splice(index,1)
-            // displayAdmins(state.data , state.goToPage)
-        // })
+        currAdmin.updateAdmin(username, body)
+        .then((data) => {
+            console.log('Hello Awayu')
+            document.querySelector('#contain').innerHTML = '';
+            body = {};
+            var allAdmin = new Admin()
+            return allAdmin.getAllAdmin()
+        })
+        .then((all) => {
+            state.data = all
+            state.goToPage = 1;
+            displayAdmins(state.data, state.goToPage)
+        }) 
     }
 })
 
 document.querySelector('body').addEventListener('click', e => {
     if (e.target.classList.contains('btn_')) {
         console.log('Awayu')
-        let goToPage = parseInt(e.target.dataset.goto, 10);
+        let goToPage = parseInt(e.target.dataset.goto);
         state.goToPage = goToPage
-        document.querySelector('.settings').innerHTML = '';
+        document.querySelector('#contain').innerHTML = '';
         displayAdmins(state.data, state.goToPage);
     }
     e.preventDefault();
