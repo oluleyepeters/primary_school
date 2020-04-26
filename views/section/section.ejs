@@ -40,21 +40,18 @@
             </nav>
         </div>
     </header>
-<body>
-    <div id="contain">
-        <div class="inner-container">
-        <section class="settings"> 
-            <% section.forEach(function(section){ %>
-                <div class="box">    
-                    <p class="box-1"><%=section.section%></p>
-                    <a class="link" href="/sections/<%=section.section%>">View Section</a>
-                </div>
-            <%})%>
-        </section>
-        <section>
-            <a class="link-1" href="/sections/new">New Section</a>
-        </section>
+    <body> 
+        <div id="container">
+            <div class="all-sections">
+                <% section.forEach(function(section){ %>
+                    <div class="section">    
+                        <p class="section-yr"><%=section.section%></p>
+                        <a class="link" href="/sections/<%=section.section%>">View Section</a>
+                    </div>
+                <%})%>
+            </div>
+            <section>
+                <a class="link" href="/sections/new">New Section</a>
+            </section>
         </div>
-    </div>
-
 <% include ../partials/footer %>

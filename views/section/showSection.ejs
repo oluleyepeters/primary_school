@@ -40,18 +40,15 @@
             </nav>
     </header>
 <body>
-    <div id="contain">
-        <div class="inner-container">
+    <div id="container">
         <section class="set">
-            <p style="margin-left:20px;" class="box-1"><%=section.section%></p>
+            <p style="margin-left:20px;" class="box-1"><%=section.section%> Academic Section</p>
             <p style="margin-left:20px;" class="box-1">Section Starts :<%=section.startDate.toDateString()%></p>
-            <p style="margin-left:20px;" class="box-1">Section Ends: <%=section.endDate.toDateString()%></p>                        
-            <a style="width:80px;" class="link-1" href="/sections/<%=section.section%>/edit">Edit Section</a>
+            <p style="margin-left:20px;" class="box-1">Section Ends: <%=section.endDate.toDateString()%></p>                       
         </section>
-        <section style="margin-bottom: 50px">    
+        <section style="margin-bottom: 50px">
+            <a style="width:80px;" class="link-1" href="/sections/<%=section.section%>/edit">Edit Section</a>    
             <a class="link-1" href="/sections/<%=section.section%>/classTeacher/">View classteachers</a>
         </section>        
     </div>
-    </div>
-
 <% include ../partials/footer %>

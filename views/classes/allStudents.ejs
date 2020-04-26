@@ -1,30 +1,29 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
-<!-- <link rel="stylesheet" href="/css/login.css"> -->
+<link rel="stylesheet" href="/css/headers.css">
 <link rel="stylesheet" href="/css/class.css">
 <body>
-<!--     <header>
+    <header>
         <div class="navbar-toggle" style="margin-right:15px;" id="js-navbar-toggle">
-                        <div class="togglebox">
+            <div class="togglebox">
                 <div>
                     <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
                     <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
                 </div>    
             </div>
-
         </div>
             <div class="logo" style="margin-left:7px;">
-                <li><a href="/">My Beulah</a></li>
+                <li>My Beulah</li>
             </div>
             <nav class="items" >
-				<li><a href="/">Home</a></li>
-				<li><a href="#">News</a></li>
-				<% if(currentUser && currentUser.role == "classTeacher"){ %>
-					<li><a href="/years">Years</a></li>
-				<%} else if(currentUser && currentUser.role == "head"){%>	
-					 <li><a href="/years">Years</a></li>
-					 <li><a href="/sections">Section</a></li>
-				<% } %>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">News</a></li>
+                <% if(currentUser && currentUser.role == "classTeacher"){ %>
+                    <li><a href="/years">Years</a></li>
+                <%} else if(currentUser && currentUser.role == "head"){%>   
+                     <li><a href="/years">Years</a></li>
+                     <li><a href="/sections">Section</a></li>
+                <% } %>
                 <% if(currentUser){ %>
                     <li><a href="#"><%=currentUser.username%></a></li>
                     <li><a href="/logout">Logout</a></li>
@@ -32,25 +31,26 @@
                     <li><a href="/students/login">Login</a></li>
                 <%}%>
             </nav>
-    </header>  -->
+    </header>
 <body>
-    <div id="container" style="">
-        <section class="classTeacher" style="margin-left:25px;">
-            <p class="clt" data-id = "<%=foundclass._id%>">ClassTeacher:<span class="name"><%=foundclass.classTeacher%></span></p>
-            <p><%=foundclass.Class%></p>
-        </section>
+    <div id="container">
+        <div class="inner-container">
+            <section class="set">
+                <p style="margin-left:20px;" class="clt" data-id = "<%=foundclass._id%>">ClassTeacher:<span class="name"><%=foundclass.classTeacher%></span></p>
+                <p style="margin-left:20px;"><%=foundclass.Class%></p>
+            </section>            
+        </div>
         <hr>
-    </div>
-    <div id="dlt">    
-        <div id="names">
+        <div id="dlt">    
+            <div id="names">
         	
-        </div>
-        <div id="result">
+            </div>
+            <div id="result">
         	
-        </div>
-    </div>    
+            </div>
+        </div>    
+</div>
 </body>
-
 <script src="/javascript/classList/views/UI.js"></script>
 <script src="/javascript/classList/models/result.js"></script>
 <script src="/javascript/classList/models/students.js"></script>

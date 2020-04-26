@@ -3,6 +3,7 @@ div > li >a{
     font-style: bold;
     font-family: serif;
 }
+
 header{
     /* position: absolute; */
     width: 100%;

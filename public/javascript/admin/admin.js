@@ -11,7 +11,7 @@ class Admin{
         return profile;
     }
 
-    async updateAdmin(username,datum){
+    async updateAdminStatus(username,datum){
         const response = await fetch(`http://localhost:8080/admin/${username}/status`, { 
             method: 'PUT',
             headers : {

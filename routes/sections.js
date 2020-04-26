@@ -71,25 +71,60 @@ router.put('/:id',middleware.headloggedin,middleware.checkAdmin || middleware.ch
     });
 })
 
-// router.delete('/:section',middleware.headloggedin,middleware.checkAdmin || middleware.checkschoolHead,function(req,res){
-//  db.Section.findByOneAndRemove({section:req.params.section},function (err) {
-//         if (err) throw err;
-//         res.json({message:'we deleted it'});
-//     });
-// })
+router.get('/:section/classTeacher',function(req, res){
+    db.Section.findOne({section:req.params.section})
+    .then((Section) => {    
+        res.render('section/allClassTeachers', {section:Section})
+    })
+}) 
 
-router.get('/:section/classteacher',function(req, res){
+router.get('/:section/allclassteacher',function(req, res){
+    db.Section.findOne({section:req.params.section})
+    .then((Section) => {
+        console.log(Section)
+        return Section;
+    }) 
+    .then((Section) => {
+        db.classTeacher.find({_section: req.params.section}).populate('classTeacher').exec(function(err,foundTeachers){
+            if(err){
+                console.log(err)
+            }
+            res.json(foundTeachers)
+        })
+    })
+})
+
+router.get('/:section/:username',function(req, res){
+    db.Section.findOne({section:req.params.section})
+    .then((Section) => {
+        console.log(section)
+        return Section;
+    }) 
+    .then((Section) => {
+        db.classTeacher.findOne({username: req.params.username, _section: req.params.section}, function(err, foundTeacher){
+            if(err){
+                console.log(err)
+            }
+            res.json(foundTeacher)
+        })
+    })
+})
+
+router.put('/:section/:username/status',function(req, res){
     db.Section.findOne({section:req.params.section})
     .then((Section) => {
         return Section;
     }) 
     .then((Section) => {
-        db.classTeacher.find({_section: req.params.section}).populate('classTeacher').exec(function(err,foundTeacher){
-            if(err){
-                console.log(err)
-            }
-            res.render('section/allClassTeachers', {classTeacher:foundTeacher, section:Section})
-        })
+        return db.classTeacher.findOne({username: req.params.username, _section: req.params.section})
+    })    
+    .then((user) => {
+        user.status = req.body.status
+        user.save()
+        return user
+    })
+    .then((user) => {
+        res.json(user)
     })
 })
 

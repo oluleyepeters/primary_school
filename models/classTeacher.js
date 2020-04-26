@@ -12,7 +12,8 @@ var classTeacherSchema=new mongoose.Schema({
     id_:String,
     user_id: String,
     Class:Number,
-    className:String
+    className:String,
+    status: {type: String, default: 'active'}
 })
 
 var classTeacher=mongoose.model('classTeacher',classTeacherSchema);

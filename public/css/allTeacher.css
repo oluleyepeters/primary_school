@@ -1,0 +1,106 @@
+html,body{
+    background-color: gray;
+    margin: 0%;
+    padding: 0%;
+}
+div > li >a{
+    color: white;
+    font-style: bold;
+    font-family: serif;
+}
+
+#container{
+    background-color: white;
+    width:70%;
+    min-height: 850px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#all-classTeachers{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.classTeacher{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.classTeacher p,
+.btn-Container{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 20%;
+}
+
+.link{
+    text-decoration: none;
+    background-color: darkred;
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5%;  
+}
+
+.btn-Container{
+    margin-top: 2px;
+}
+
+.btn-Container .link{
+    margin-left: 0px;
+}
+
+#btn-Container{
+    margin-top: 30px;
+}
+
+footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    color: white;
+    display: flex;
+    margin-top:0px;
+    justify-content: center;
+    align-content: center;
+    background-color: darkred;
+}
+
+.footer-1{
+    /* height: 100px; */
+    display: flex;
+    align-self: center;
+}
+
+@media (max-width:600px){
+   #container{
+        background-color: white;
+        width:100%;
+        min-height: 850px;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+    /*justify-items: center;*/
+    }
+
+    #all-classTeachers{
+        /*min-height: 100%;*/
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 0px auto;
+        justify-content: center;
+    }
+
+    .classTeacher p,
+    .btn-Container{
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }    
+}

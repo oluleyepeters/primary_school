@@ -1,39 +1,53 @@
 html,body{
-    height: 100%;
     margin: 0%;
     padding: 0%;
     background-color: gray;
 }
+
 div > li >a{
     color: white;
     font-style: bold;
     font-family: serif;
 }
-#contain{
-    min-height: 85%;
-    padding-bottom: 100px;
-    overflow: auto;
+
+#container{
+    background-color: white;
+    width:70%;
+    min-height: 750px;
+    margin: 0px auto;
 }
 
-footer{
-    position: relative;
-    /* bottom: 0px; */
-    height: 100px;
-    margin-top: -100px;
-    padding: 0%;
-    width: 100%;
+.all-sections{
+    width:90%;
+    background-color: white;
+    min-height: 100%;
+    margin:0px auto;
     display: flex;
-    /* flex-direction: column; */
-    /* margin-top:30px; */
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.section{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.section-yr{
+    margin-right: 20px;
+}
+
+.link{
+    text-decoration: none;
     background-color: darkred;
-}
-
-.footer-1{
-    /* height: 100px; */
-    display: flex;
-    align-self: center;
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5%;  
 }
 
 input{
@@ -43,14 +57,6 @@ input{
 
 .box{
     margin: 10px auto;
-}
-
-.link{
-    text-decoration: none;
-    background-color: darkred;
-    padding:5px;
-    border-radius: 5px;
-    color:white;
 }
 
 
@@ -70,65 +76,32 @@ input{
     margin:30px auto;
 }
 
-
-@media (max-width:760px){
-    button, input{
-        width:50%;
-    }
+footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    color: white;
+    display: flex;
+    margin-top:0px;
+    justify-content: center;
+    align-content: center;
+    background-color: darkred;
 }
 
-.inner-container{
-    width:50%;
-    padding-bottom: 230px;
-    background-color: white;
-    min-height: 100%;
-    margin:0px auto;
-    /* overflow-x: scroll; */
-    overflow-y: hidden;
-
+.footer-1{
+    /* height: 100px; */
+    display: flex;
+    align-self: center;
 }
 
-
-@media (max-width:760px){
-    button, input{
-        width:50%;
-    }
-}
-
-
-@media (max-width:960px){
-    .button, .input,.input2{
-        width:40%;
-    }
-.inner-container{
-        width:55%;
-    }
-}
-    
-@media (max-width:1600px){
-    .button, .input,.input2{
-        width:35%;
-    }
-    .inner-container{
-        width:40%;
-    }
-}
-
-
-@media (max-width:650px){
-    .button,.input,.input2{
-        width:45%;
-    }
-    .inner-container{
-        width:60%;
+@media (max-width:600px){
+    #container{
+        width: 95%
     }
 }
 
 @media (max-width:400px){
-    .button,.input,.input2{
-        width:50%;
-    }
-    .inner-container{
-        width:70%;
+    #container{
+        width: 100%
     }
 }

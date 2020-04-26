@@ -1,23 +1,74 @@
-<% include ../partials/headers %>
-<title></title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<link rel="stylesheet" href="/css/login.css">
-<% include ../partials/headers2 %>
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/newSection.css">
+    <link rel="stylesheet" href="/css/headers.css">
+<title>Document</title>
+</head>
 <body>
-    <section id="container">
-        <section class="inner-contain">
-            <form style="margin-top:0px;" action="/class/<%=foundClass._id%>/" method="POST">
-                <input class="input2" type="text" name="firstname" id="firstname" placeholder="firstname">
-                <input class="input2" type="text" name="othername" id="othername" placeholder="othername">
-                <input class="input2" type="text" value="123456" readonly name="password" id="password">
-                <input class="input2" type="text" name="surname" id="surname"  placeholder="surname">
-                <input class="input2" type="text" name="username" id="username" placeholder="username">
-				<input class="input2" type="number" name="class_" id="Class" value="<%=foundClass.Class%>" readonly>
-                <input class="input2" type="text" value="<%=foundClass.className%>" name="className_" readonly id="classNames" placeholder="ClassName">                
-                <input id="submit" class="button" type="submit" value="Submit">
-
+    <header>
+        <div class="navbar-toggle" style="margin-right:15px;" id="js-navbar-toggle">
+            <div class="togglebox">
+                <div>
+                    <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
+                    <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
+                </div>    
+            </div>
+        </div> 
+            <div class="logo" style="margin-left:7px;">
+                <li>My Beulah</li>
+            </div>
+            <nav class="items" >
+                <li><a href="/">Home</a></li>
+                <li><a href="#">News</a></li>
+                <% if(currentUser && currentUser.role == "classTeacher"){ %>
+                    <li><a href="/years">Years</a></li>
+                <%} else if(currentUser && currentUser.role == "head"){%>   
+                     <li><a href="/years">Years</a></li>
+                     <li><a href="/sections">Section</a></li>
+                <% } %>
+                <% if(currentUser){ %>
+                    <li><a href="#"><%=currentUser.username%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <%}else{%>
+                    <li><a href="/students/login">Login</a></li>
+                <%}%>
+            </nav>
+        </div>
+    </header>
+    <div id="container">
+            <form action="/class/<%=foundClass._id%>/" method="POST">
+                <legend class="fs-1 mb-1">Enter New Student Details</legend>   
+                <div class="input-box mt-1">
+                    <label for="firstname">FirstName</label>
+                    <input class="input" type="text" name="firstname" id="firstname" placeholder="firstname">
+                </div>
+                <div class="input-box">
+                    <label for="othername">OtherName</label>
+                    <input class="input" type="text" name="othername" id="othername" placeholder="othername">
+                </div>
+                <div class="input-box">
+                    <label for="surname">Surname</label>
+                    <input class="input" type="text" name="surname" id="surname"  placeholder="surname">
+                </div>
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <input class="input" type="text" name="username" id="username" placeholder="username">                    
+                </div>
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input class="input2" type="password" value="123456" readonly name="password" id="password">                    
+                </div>
+                <div class="input-box">
+                    <input class="input" type="number" name="class_" id="Class" value="<%=foundClass.Class%>" readonly>
+                </div>
+                <div class="input-box">
+                    <input class="input" type="text" value="<%=foundClass.className%>" name="className_" readonly id="classNames" placeholder="ClassName">                
+                </div>
+                <button id="submit" class="button" type="submit">Submit</button>
             </form>
-        </section> 
-    </section>
+    </div>
 <% include ../partials/footer %>

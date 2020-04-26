@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/headers.css">
-    <link rel="stylesheet" href="/css/showSection.css">
+    <link rel="stylesheet" href="/css/allTeacher.css">
     <!-- <link rel="stylesheet" href="/css/showSection.css"> -->
     <title>Document</title>
 </head> 
@@ -40,29 +40,23 @@
             </nav>
     </header>
 <body>
-    <div id="contain">
+    <div id="container">
         <div class="inner-container">
-        <section class="set">
-            <p style="margin-left:20px;" class="box-1"><%=section.section%></p>
-            <p style="margin-left:20px;" class="box-1">Section Starts :<%=section.startDate.toDateString()%></p>
-            <p style="margin-left:20px;" class="box-1">Section Ends: <%=section.endDate.toDateString()%></p>                        
-        </section>
-         <section class="settings">
-             <% classTeacher.forEach(function(classTeacher){ %>
-             <div class="boxx">
-                 <p><%=classTeacher.firstname%></p>
-                 <p><%=classTeacher.surname%></p>
-                 <p><%=classTeacher.othername%></p>
-                 <p><%=classTeacher.email%></p>
-                 <p><%=classTeacher.phone_number%></p>
-                 <br>
-                 <a class="link" href="/sections/<%=section.section%>/classteacher/<%=classTeacher.username%>/edit">Edit classteacher</a>
-             </div>
-        <%})%>        
-        <section style="margin-bottom: 50px">    
-            <a class="link-1" href="/sections/<%=section.section%>/classTeacher/new">Add ClassTeacher</a>
-        </section>        
+            <section class="set">
+                <p style="margin-left:20px;" class="box-1"><%=section.section%></p>
+                <p style="margin-left:20px;" class="box-1">Section Starts :<%=section.startDate.toDateString()%></p>
+                <p style="margin-left:20px;" class="box-1">Section Ends: <%=section.endDate.toDateString()%></p>                        
+            </section>
+        </div>    
+        <hr class="section_id" data-section_id="<%=section.section %>" />
+        <div id="all-classTeachers">
+            
+        </div>
+        <section id="btn-Container">    
+            <a class="link" href="/sections/<%=section.section%>/classTeacher/new">Add ClassTeacher</a>
+        </section>                    
     </div>
-    </div>
-
+<script src="/javascript/classRoom/UI.js"></script>
+<script src="/javascript/classRoom/classTeachers.js"></script>
+<script src="/javascript/classRoom/app.js"></script>
 <% include ../partials/footer %>

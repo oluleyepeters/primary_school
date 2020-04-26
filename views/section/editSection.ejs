@@ -1,23 +1,85 @@
-<% include ../partials/headers %>
-<title></title>
-<meta name="" content="">
-<meta name="" content="">
-<link rel="stylesheet" href="/css/headers.css">
-<link rel="stylesheet" href="/css/login.css"> 
-<% include ../partials/headers2 %>
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/newSection.css">
+    <link rel="stylesheet" href="/css/headers.css">
+<title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar-toggle" style="margin-right:15px;" id="js-navbar-toggle">
+            <div class="togglebox">
+                <div>
+                    <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
+                    <hr style="width:80%; margin-top:4px; margin-bottom:4px; height:1px; color:darkred;">
+                </div>    
+            </div>
+        </div> 
+            <div class="logo" style="margin-left:7px;">
+                <li>My Beulah</li>
+            </div>
+            <nav class="items" >
+                <li><a href="/">Home</a></li>
+                <li><a href="#">News</a></li>
+                <% if(currentUser && currentUser.role == "classTeacher"){ %>
+                    <li><a href="/years">Years</a></li>
+                <%} else if(currentUser && currentUser.role == "head"){%>   
+                     <li><a href="/years">Years</a></li>
+                     <li><a href="/sections">Section</a></li>
+                <% } %>
+                <% if(currentUser){ %>
+                    <li><a href="#"><%=currentUser.username%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <%}else{%>
+                    <li><a href="/students/login">Login</a></li>
+                <%}%>
+            </nav>
+        </div>
+    </header>
 <body>
     <div id="container">
-        <div class="inner-container">
         <form action="/sections/<%=section._id%>?_method=PUT" method="post">
-            <input class="input" type="text" name="section" id="section"
-            value="<%=section.section%>">
-            <input class="input" type="date" name="startDate" id="startdate" value="<%=section.startDate%>">
-            <input class="input" type="date" name="endDate" id="endDate" value="<%=section.endDate%>">                                            
-            <section>
-                <button class="button" id="submit" type="submit">Submit</button>
-            </section>
+            <legend class="fs-1 mb-1">Edit Section</legend>        
+            <div class="input-box mt-1">
+                <label for="section">Section</label>
+                <input class="input" value="<%=section.section%>" type="text" name="section" id="section">          
+            </div>           
+            <div class="input-box">
+                <label for="section">Section Start Date</label>
+                <input class="input" value="<%=section.startDate.toLocaleDateString()%>" type="date" name="section" id="section">            
+            </div>
+            <div class="input-box">
+                <label for="sectionEndDate">Section End Date</label>
+                <input class="input" value="<%=section.endDate%>" type="date" name="endDate" id="sectionEndDate">
+            </div>
+            <div class="input-box">
+                <label for="1stStartDate">First Term Start Date</label>
+                <input class="input" value="<%=section.firsttermstartDate%>" type="date" name="firsttermstartDate" id="1stStartDate">                
+            </div>                         
+            <div class="input-box">
+                <label for="1stEndDate">First Term End Date</label>
+                <input class="input" value="<%=section.firsttermendDate%>" type="date" name="firsttermendDate" id="1stEndDate">
+            </div>    
+            <div class="input-box">
+                <label for="2ndStartDate">Second Term Start Date</label>                                
+                <input class="input" value="<%=section.secondtermstartDate%>" type="date" name="secondtermstartDate" id="2ndStartDate">
+            </div>
+            <div class="input-box">                               
+                <label for="2ndEndDate">Second Term End Date</label> 
+                <input class="input" value="<%=section.secondtermendDate%>" type="date" name="secondtermendDate" id="2ndEndDate">
+            </div>
+            <div class="input-box">
+                <label for="3rdStartDate">Third Term Start Date</label>                                
+                <input class="input" value="<%=section.thirdtermstartDate%>" type="date" name="thirdtermstartDate" id="3rdStartDate">
+            </div>
+            <div class="input-box">
+                <label for="3rdEndDate">Third Term End Date</label>   <input class="input" value="<%=section.thirdtermendDate%>" type="date" name="thirdtermendDate" id="3rdEndDate">                 
+            </div>                    
+            <button class="button" id="submit" type="submit">Submit</button>            
         </form>
-        </div>
     </div>
 
 <% include ../partials/footer %>

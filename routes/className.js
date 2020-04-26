@@ -382,7 +382,7 @@ router.get('/:foundclass/allStudent' , (req,res) => {
             // res.render('classes/allStudents', {foundclass:foundclass, students:foundStudents})
         })
     })
-})
+}) 
 
 router.get('/:foundclass/:student/result', function(req, res){
     let klassname, _klassStudent

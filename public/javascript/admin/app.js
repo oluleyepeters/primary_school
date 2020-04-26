@@ -20,7 +20,7 @@ document.querySelector('body').addEventListener('click', e => {
         .then((data) => {
             var index = findIndex(state.data, username);
             state.data.splice(index,1)
-            document.querySelector('#contain').innerHTML = '';
+            document.querySelector('#all-admins').innerHTML = '';
             if(state.data.length === 5){
                 state.goToPage = 1;
                 displayAdmins(state.data , state.goToPage)
@@ -42,10 +42,10 @@ document.querySelector('body').addEventListener('click', e => {
             body.status = 'active'
         }
         var currAdmin = new Admin();
-        currAdmin.updateAdmin(username, body)
+        currAdmin.updateAdminStatus(username, body)
         .then((data) => {
             console.log('Hello Awayu')
-            document.querySelector('#contain').innerHTML = '';
+            document.querySelector('#all-admins').innerHTML = '';
             body = {};
             var allAdmin = new Admin()
             return allAdmin.getAllAdmin()
@@ -63,7 +63,7 @@ document.querySelector('body').addEventListener('click', e => {
         console.log('Awayu')
         let goToPage = parseInt(e.target.dataset.goto);
         state.goToPage = goToPage
-        document.querySelector('#contain').innerHTML = '';
+        document.querySelector('#all-admins').innerHTML = '';
         displayAdmins(state.data, state.goToPage);
     }
     e.preventDefault();

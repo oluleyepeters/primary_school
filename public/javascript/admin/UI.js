@@ -17,7 +17,7 @@ const renderButtons = (page, data, adminsPerPage) => {
     } else if (page === pages && pages > 1) {
         button = createButton(page, 'prev');
     }
-    document.querySelector('#contain').insertAdjacentHTML('beforeEnd', button);
+    document.querySelector('#all-admins').insertAdjacentHTML('beforeEnd', button);
 };
 
 const displayAdmins = (data, page = 1, adminsPerPage = 5) => {
@@ -30,13 +30,13 @@ const displayAdmins = (data, page = 1, adminsPerPage = 5) => {
 }
 
 var renderAdmin = (data) => {
-    var container = document.querySelector('#contain')
+    var container = document.querySelector('#all-admins')
     var div = document.createElement('div');
-    div.classList.add('inner-container')
+    div.classList.add('btn-Container')
     var section = document.createElement('section')
-    section.classList.add('settings');
+    section.classList.add('all-admins');
     var box = document.createElement('div')
-    box.classList.add('boxx')
+    box.classList.add('admin')
     box.innerHTML = `
         <p>${data.username}</p>
         <p>${data.lastname}</p>
@@ -45,12 +45,12 @@ var renderAdmin = (data) => {
         <p>${data.phone_number}</p>
     `
     var delButton = document.createElement('button');
-    delButton.classList.add('link-1')
+    delButton.classList.add('link')
     delButton.classList.add('username')
     delButton.dataset.username = data.username
     delButton.textContent = 'Delete'
     var updButton = document.createElement('button');
-    updButton.classList.add('link-1');
+    updButton.classList.add('link');
     updButton.classList.add('status')
     updButton.dataset.username = data.username;
     updButton.dataset.status = data.status;
@@ -60,8 +60,8 @@ var renderAdmin = (data) => {
         updButton.textContent = 'Activate Admin'
     }        
     section.appendChild(box)
-    section.appendChild(delButton)
-    section.appendChild(updButton)    
-    div.appendChild(section)
-    container.appendChild(div)
+    div.appendChild(delButton)
+    div.appendChild(updButton)
+    section.appendChild(div)    
+    container.appendChild(section)
 }

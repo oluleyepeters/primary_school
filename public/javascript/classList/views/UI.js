@@ -1,6 +1,6 @@
 const createButton = (page, type) => `
-    <button class="btn_ results__btn--${type}" data-goto=${type === 'prev' ? page - 1 : page + 1}>
-        <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
+    <button class="btn_ results__btn--${type}" class="link" data-goto=${type === 'prev' ? page - 1 : page + 1}>
+        ${type === 'prev' ? 'Previous' : 'Next'}
     </button>
 `;
 
@@ -34,8 +34,7 @@ const displayNames = (data) => {
     for(var i=0; i < `${data.length}`; i++){
         const p=document.createElement('p')
         p.classList.add('student')
-        p.style.backgroundColor = 'green'
-        p.style.width = 50;
+        p.style.color = 'white'
         p.dataset.id = data[i].id;
         p.dataset.student_id = data[i]._id;      
         p.textContent = `${data[i].surname}`
@@ -48,24 +47,22 @@ const displayResult = (data, datum, page) => {
     var box=document.createElement('section')
     box.classList.add('editresult')
     box.innerHTML= `
-    <div id="container"> 
-        <section>
-            <p class="person">${datum.id_}</p>
+        <section class="stdDetails">
+            <p class="person">${datum.firstName}</p>
+            <p class="person">${datum.lastName}</p>            
         </section>
-            <div class="direction">
-                <div class="direct">
-                    <input class="input" value="Subject" readonly width="100px">
-                    <input style="text-align:left;" value="Exam" readonly width="100px">
-                    <input style="text-align:left;" value="1st_Test" readonly width="100px">
-                    <input style="text-align:left;" value="2nd_Test" readonly width="100px">
-                    <input style="text-align:left;" value="Assg" readonly width="100px">
-                </div>
+        <div class="direction">
+            <div class="direct">
+                <input value="Subject" readonly width="100px">
+                <input style="text-align:left;" value="Exam" readonly class="score">
+                <input style="text-align:left;" value="1st_Test" readonly class="score">
+                <input style="text-align:left;" value="2nd_Test" readonly class="score">
+                <input style="text-align:left;" value="Assg" readonly class="score">
             </div>
-        <section>
+        </div>
+        <section class="updResult">
             <button type="submit" data-termName=${datum.termName} id="post" class="link sbmlink">Submit</button>
         </section>
-        </form>
-    </div>
     `
     document.querySelector('#result').appendChild(box)
     appendResult(datum.subjects)
@@ -78,7 +75,7 @@ const appendResult = (subjects) => {
         var box = document.createElement('div')
         box.classList.add('direct')
         box.innerHTML = `
-            <input readonly value=${subjects[p].subject} class="input">
+            <input readonly value=${subjects[p].subject}>
             <input type="number" value=${subjects[p].Examination} required min="0" max="50"
             name="${subjects[p].subject}-Examination" class="score" id="exam">
             <input type="number" value=${subjects[p].First_test} required min="0" max="15" 
